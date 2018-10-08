@@ -1,0 +1,26 @@
+<h1>Jobs</h1>
+
+<p>This component demonstrates fetching data from the server. The logic for fetching this data is in the JobSearchController</p>
+
+<p *ngIf="!jobs"><em>Loading...</em></p>
+
+<table id="JobsTable" class='display' ng-show="jobs">
+  <thead>
+    <tr>
+      <th>title       </th>
+      <th>location    </th>
+      <th>type        </th>
+      <th>company     </th>
+      <th>url         </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let jobsearch of jobs">
+      <td>{{ jobsearch.title }}</td>
+      <td>{{ jobsearch.location }}</td>
+      <td>{{ jobsearch.type }}</td>
+      <td>{{ jobsearch.company }}</td>
+      <td><a href="{{ jobsearch.url }}">Apply Here</a></td>
+    </tr>
+  </tbody>
+</table>
